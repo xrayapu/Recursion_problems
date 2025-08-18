@@ -2,7 +2,7 @@
 
 
 def marge(arr, left, right): # this although used iterative way ! 
-    i=j=k=0
+    i,j,k=0,0,0
      
     while i < len(left) and j < len(right):
         if left[i]<= right[j]:
@@ -26,13 +26,12 @@ def marge(arr, left, right): # this although used iterative way !
         j+=1
 
     return arr
-
+# okay with leetcode ! 
 def margeSort(arr): # recursive way here ! 
-    lo=0
-    hi=len(arr)-1
-    if len(arr)==1:
+    
+    if len(arr)==1: # if len(arr) <= 1:
         return arr
-    mid= lo+(hi-lo)//2
+    mid= len(arr)//2 # using whole array that's why no need to do that ->    #lo+(hi-lo)//2  # although works fine on pc, but not on leetcode ! 
     left=margeSort(arr[:mid+1])
     right=margeSort(arr[mid+1:])
     return marge(arr,left, right)
