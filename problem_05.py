@@ -2,7 +2,7 @@
 
 def sol(arr):
   if len(arr)==0:
-    return arr
+    return arr # return ''        <- same effect ! 
 
   return sol(arr[1:])+arr[0]
 
